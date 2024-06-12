@@ -40,7 +40,7 @@ def main():
         if payout > 0:
             print("You Won $", payout)
         else:
-            print("You Lost This Round")
+            print("You Lost This Round \n")
 
         balance += payout
 
