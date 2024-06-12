@@ -4,9 +4,11 @@ import random
 def main():
     balance = 100
 
+    print("-----------------------")
     print("Welcome to Python Slots")
-
+    print("-----------------------")
     print("Symbols: 🍒 🍉 🍋 🛎️ ⭐️")
+    print("-----------------------")
 
     while balance > 0:
         print("Current Balance: $", balance)
@@ -22,12 +24,14 @@ def main():
         if bet > balance:
             print("Insufficient Funds! Place A Lower Bet")
             continue
+
         if bet <= 0:
             print("Bet Must Be Greater Than Zero")
 
         balance -= bet
 
         row = spin_row()
+
         print("Spinning...\n")
         print_row(row)
 
@@ -45,19 +49,23 @@ def main():
         if play_again != "Y":
             break
 
+    print("--------------------------------------------")
     print("Game Over! Your Final Balance Was $", balance)
+    print("--------------------------------------------")
 
 
 def spin_row():
     symbols = ["🍒", "🍉", "🍋", "🛎️", "⭐️"]
     result = []
-    for symbol in range(3):
+    for i in range(3):
         result.append(random.choice(symbols))
     return result
 
 
 def print_row(row):
+    print("-------------")
     print(" | ".join(row))
+    print("-------------")
 
 
 def get_payout(row, bet):
